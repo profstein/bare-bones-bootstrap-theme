@@ -9,8 +9,6 @@
 
                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
                     <div class="row">
-                        <div class="col-sm-12">
-
 
                             <!-- featured image across the top -->
                             <div class="col-sm-12">
