@@ -33,9 +33,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                    <?php bloginfo('name'); ?>
-                </a>
+            <a class="navbar-brand" href="<?php echo home_url(); ?>">
+                <img src="<?php header_image(); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />    
+                <?php bloginfo('name'); ?>
+            </a>
         </div>
 
             <?php
