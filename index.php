@@ -19,7 +19,9 @@
                            
                         </p>
                         <!-- show the title as h3 element-->
-                        <?php the_title('<h3>','</h3>'); ?> 
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+			            <?php the_title('<h3>','</h3>'); ?> 
+			            </a>
                     </div>
                 </div>
 
