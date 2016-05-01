@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
     <!-- CHANGE THIS TO JUST class="container" if you don't want the content to span whe whole width of the page -->
-    <div class="container-fluid">
+    <div class="container">
 
         <?php if (have_posts()) : ?>
 
