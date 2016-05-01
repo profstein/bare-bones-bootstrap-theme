@@ -1,6 +1,6 @@
     <footer class="footer">
         <div class="container">
-            <p class="text-muted">&copy; 2015 Christopher Stein
+            <p class="text-muted">&copy; 2015 <?php bloginfo('name'); ?>
         </div>
     </footer>
 
