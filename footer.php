@@ -1,6 +1,6 @@
     <footer class="footer">
         <div class="container">
-            <p class="text-muted">&copy; 2015 <?php bloginfo('name'); ?>
+            <p class="text-muted">&copy; <?php the_date('Y'); ?> <?php bloginfo('name'); ?>
         </div>
     </footer>
 

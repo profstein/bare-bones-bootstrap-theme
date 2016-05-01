@@ -15,7 +15,7 @@ function bare_bones_setup() {
     */
     
     if ( function_exists( 'add_theme_support' ) ) {
-         https://codex.wordpress.org/Post_Thumbnails
+        
         add_theme_support('automatic-feed-links'); // adds rss feed information to pages
         add_theme_support('html5', array(
             'search-form',
@@ -48,10 +48,22 @@ function bare_bones_setup() {
 }
 add_action('after_setup_theme','bare_bones_setup');
 
+/*
+ * Allow for custom headr image
+ */
 
- /*
-* ADD IN EXTERNAL CSS AND JS (BOOTSTRAP and others)
-*/
+$args = array(
+	'width'         => 50,
+	'height'        => 40,
+	'default-image' => get_template_directory_uri() . '/images/logo.png',
+	'uploads'       => true,
+);
+add_theme_support( 'custom-header', $args );
+
+
+/*
+ * ADD IN EXTERNAL CSS AND JS (BOOTSTRAP and others)
+ */
 
 function bare_bones_bootstrap_enqueue_scripts() {
 	$template_url = get_template_directory_uri();
