@@ -27,7 +27,7 @@
                         <!-- end row -->
 
                         <div class="row">
-                            <div class="col-sm-12 col-md-8 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                            <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 
                                 <!-- show the title as h3 element-->
                                 <?php the_title('<h3>','</h3>'); ?>
@@ -42,7 +42,7 @@
                                  in this file or create more than one page template file.
                              -->
                              <div class="row">
-                                 <div class="col-sm-12 col-md-8 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                                 <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
                                      <?php the_content() ?>
                                  </div>
                              </div>
