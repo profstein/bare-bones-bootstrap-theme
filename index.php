@@ -22,6 +22,10 @@
                         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 			            <?php the_title('<h3>','</h3>'); ?> 
 			            </a>
+                   
+                       <p> <?php echo get_the_term_list( $post->ID, 'students', 'Student: ', ', ', '' ); ?>    </p>
+                       <p><?php echo get_the_term_list( $post->ID, 'major', 'Major: ', ', ', '' ); ?> </p>
+                       <p><?php echo get_the_term_list( $post->ID, 'course', 'Course: ', ', ', '' ); ?> </p>
                     </div>
                 </div>
 
