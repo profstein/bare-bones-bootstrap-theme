@@ -38,6 +38,13 @@
                         <div class="col-xs-12">
                             <!-- show the title as h3 element-->
                             <?php the_title('<h3>','</h3>'); ?>
+                            <?php //if there is a url custom field then show it
+                            $url = get_post_meta($post->ID, 'url', true);
+                            if($url):?>
+                                <p class="view-work">
+                                    view work: <a href="<?php echo $url ?>" > <?php echo $url ?> </a>
+                                </p>
+                            <?php endif; ?>
                         </div>
                     </div>
 
@@ -57,10 +64,16 @@
                     <div class="student">
                        <?php //these next few lines only work if the Taxonomy Images plugin is installed
                             $image = apply_filters( 'taxonomy-images-list-the-terms', '', array(
+                                'before'       => '',
+                                'after'        => '',
+                                'before_image' => '',
+                                'after_image'  => '',
                                 'image_size' => 'thumbnail',
+                                'attr' => array('class' => 'img-responsive'),
                                 'taxonomy'     => 'students',
                             ) );
                             if(! empty($image)):
+//                                print_r($image);
                         ?>
                             <div class="student-picture">
                                 <?php 
