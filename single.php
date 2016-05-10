@@ -77,125 +77,13 @@
                         
                         <div class="related-work">
                               
-                            
-                            <?php //Custom WP_Query to find other work by this student ?>
-                            <?php
-                                //get the current student slug
-                                $student = wp_get_post_terms($post->ID, 'students');
-//                                print_r($student);
-                                $args = array(
-                                    'post_type' => 'post',
-                                    'post__not_in' => array($post->ID),
-                                    'tax_query' => array(
-                                        array(
-                                            'taxonomy' => 'students',
-                                            'field'    => 'slug',
-                                            'terms'    => $student[0]->slug
-                                        )
-                                    )
-                                );
-                                $the_query = new WP_Query( $args );
-//                                print_r($the_query);
-                            ?>
-                            
-                            <?php if ( $the_query->have_posts() ) : ?> 
-                                
-                                <div class="related-work-student">
-                                   <h3>Other Work by the Student</h3>
-                                    <!-- the loop -->
-                                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                                        <div class="col-sm-4">  
-                                            <?php get_template_part('content','thumbnail'); ?>
-                                        </div>                                  
-                                    <!-- end of the loop -->
-                                    <?php endwhile; ?>
-                                </div>
-                                <?php wp_reset_postdata(); ?>
-
-                            <?php else : ?>
-                                <!-- No other student posts were found -->
-                            <?php endif; ?> 
+<!--                        ------------------------------------------------------------------------- -->                                        <?php get_template_part('related-work-student'); ?>
                             
 <!--                        ------------------------------------------------------------------------- -->
-                        
-                            <?php //Custom WP_Query to find other work in the major ?>
-                            <?php
-                                //get the current major slug
-                                $major = wp_get_post_terms($post->ID, 'major');
-//                                print_r($major);
-                                $args = array(
-                                    'post_type' => 'post',
-                                    'post__not_in' => array($post->ID),
-                                    'tax_query' => array(
-                                        array(
-                                            'taxonomy' => 'major',
-                                            'field'    => 'slug',
-                                            'terms'    => $major[0]->slug
-                                        )
-                                    )
-                                );
-                                $the_query = new WP_Query( $args );
-//                                print_r($the_query);
-                            ?>
-                            
-                            <?php if ( $the_query->have_posts() ) : ?> 
-                                
-                                <div class="related-work-major">
-                                   <h3>Other Work in the <?php echo $major[0]->name ?> Major</h3>
-                                    <!-- the loop -->
-                                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                                        <div class="col-sm-4">  
-                                            <?php get_template_part('content','thumbnail'); ?>
-                                        </div>                                  
-                                    <!-- end of the loop -->
-                                    <?php endwhile; ?>
-                                </div>
-                                <?php wp_reset_postdata(); ?>
-
-                            <?php else : ?>
-                                <!-- No other student posts were found -->
-                            <?php endif; ?> 
-                        
-                            
+                            <?php get_template_part('related-work-major'); ?>
+                                                  
 <!--                        ------------------------------------------------------------------------- -->
-                        
-                            <?php //Custom WP_Query to find other work in the course ?>
-                            <?php
-                                //get the current course slug
-                                $course = wp_get_post_terms($post->ID, 'course');
-//                                print_r($course);
-                                $args = array(
-                                    'post_type' => 'post',
-                                    'post__not_in' => array($post->ID),
-                                    'tax_query' => array(
-                                        array(
-                                            'taxonomy' => 'course',
-                                            'field'    => 'slug',
-                                            'terms'    => $course[0]->slug
-                                        )
-                                    )
-                                );
-                                $the_query = new WP_Query( $args );
-//                                print_r($the_query);
-                            ?>
-                            
-                            <?php if ( $the_query->have_posts() ) : ?> 
-                                
-                                <div class="related-work-course">
-                                   <h3>Other Work in the <?php echo $course[0]->name ?> Course</h3>
-                                    <!-- the loop -->
-                                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-                                        <div class="col-sm-4">  
-                                            <?php get_template_part('content','thumbnail'); ?>
-                                        </div>                                  
-                                    <!-- end of the loop -->
-                                    <?php endwhile; ?>
-                                </div>
-                                <?php wp_reset_postdata(); ?>
-
-                            <?php else : ?>
-                                <!-- No other student posts were found -->
-                            <?php endif; ?> 
+                            <?php get_template_part('related-work-course'); ?>
                                                     
                         <!-- end related work -->    
                         </div>
