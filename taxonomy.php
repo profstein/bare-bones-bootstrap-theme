@@ -29,6 +29,7 @@
             
             <?php //If you added an image through the Taxonomy Images Plugin, this is how you show it 
                     //In this case it is only shown for students
+                //could change to: if( is_tax('students') ):
                 if ( $queried_object->taxonomy == "students" ):
             ?>
             <div class="student-image">
