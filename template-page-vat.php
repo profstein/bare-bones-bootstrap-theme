@@ -32,7 +32,8 @@
         <?php endif; ?>
         
         
-        <!-- This code creates a custom WP_Query that goes in and gets all of the posts related to the VAT Major. -->
+        <!-- This code creates a custom WP_Query that goes in and gets all of the posts related to the VAT Major. 
+        It assumes that you have the Media Creators plugin installed to add a major taxonomy and that you have a major with the vat slug-->
 <?php //wrap it all in a check to make sure the taxonomy exists
 if( taxonomy_exists('major') ): ?>
 
